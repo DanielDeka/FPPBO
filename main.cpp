@@ -154,7 +154,7 @@ int main()
     if (l.Y>=maxy) continue;
     maxy = l.Y;
 
-    Color grass  = (n/3)%2?Color(16,200,16):Color(0,154,0);
+    Color grass  = (n/3)%2?Color(150,100,30):Color(222,158,0);
     Color rumble = (n/3)%2?Color(255,255,255):Color(0,0,0);
     Color road   = (n/3)%2?Color(107,107,107):Color(105,105,105);
 
