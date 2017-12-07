@@ -91,9 +91,7 @@ int main()
 
   std::vector<Line> lines;
 
-  bool isCrashed = false;
-
-  for (int i = 1; i<1601; i++)
+  for (int i = 0; i<1600; i++)
   {
     Line line;
     line.z = i*segL;
@@ -101,14 +99,14 @@ int main()
     if (i>300 && i<700) line.curve = 0.5;
     if (i>1100) line.curve = -0.7;
 
-    if (i<300 && i % 20 == 0) { line.spriteX = -2.5; line.sprite = object[5]; isCrashed = false;}
-    if (i % 17 == 0) { line.spriteX = 2.0; line.sprite = object[6]; isCrashed = false;}
-    if (i>300 && i % 20 == 0) { line.spriteX = -0.7; line.sprite = object[4]; isCrashed = false;}
-    if (i>800 && i % 20 == 0) { line.spriteX = -1.2; line.sprite = object[1]; isCrashed = false;}
-    if (i == 400) { line.spriteX = -1.2; line.sprite = object[7]; isCrashed = false;}
-    if (i % 301 == 0) { line.spriteX = -0.8; line.sprite = object[2]; isCrashed = true;}
-    if (i % 151 == 0) { line.spriteX = -0.2; line.sprite = object[2]; isCrashed = true;}
-    if (i % 71 == 0) { line.spriteX = -0.5; line.sprite = object[2]; isCrashed = true;}
+    if (i<300 && i % 20 == 0) { line.spriteX = -2.5; line.sprite = object[5]; }
+    if (i % 17 == 0) { line.spriteX = 2.0; line.sprite = object[6]; }
+    if (i>300 && i % 20 == 0) { line.spriteX = -0.7; line.sprite = object[4]; }
+    if (i>800 && i % 20 == 0) { line.spriteX = -1.2; line.sprite = object[1]; }
+    if (i == 400) { line.spriteX = -1.2; line.sprite = object[7]; }
+    if (i % 301 == 0) { line.spriteX = -0.8; line.sprite = object[2]; }
+    if (i % 151 == 0) { line.spriteX = -0.2; line.sprite = object[2]; }
+    if (i % 71 == 0) { line.spriteX = -0.5; line.sprite = object[2]; }
 
     if (i>750) line.y = sin(i / 30.0) * 1500;
 
@@ -131,23 +129,13 @@ int main()
 
     int speed = 0;
 
-    if (isCrashed = false)
-    {
-      if (Keyboard::isKeyPressed(Keyboard::Right)) playerX += 0.1;
-      if (Keyboard::isKeyPressed(Keyboard::Left)) playerX -= 0.1;
-      if (Keyboard::isKeyPressed(Keyboard::Up)) speed = 200;
-      if (Keyboard::isKeyPressed(Keyboard::Down)) speed = -200;
-      if (Keyboard::isKeyPressed(Keyboard::Tab)) speed *= 3;
-    }
-
-    else
-    {
-      if (Keyboard::isKeyPressed(Keyboard::Right)) playerX += 0.1;
-      if (Keyboard::isKeyPressed(Keyboard::Left)) playerX -= 0.1;
-      if (Keyboard::isKeyPressed(Keyboard::Up)) speed = 50;
-      if (Keyboard::isKeyPressed(Keyboard::Down)) speed = -200;
-      if (Keyboard::isKeyPressed(Keyboard::Tab)) speed *= 3;
-    }
+    if (Keyboard::isKeyPressed(Keyboard::Right)) playerX += 0.1;
+    if (Keyboard::isKeyPressed(Keyboard::Left)) playerX -= 0.1;
+    if (Keyboard::isKeyPressed(Keyboard::Up)) speed = 200;
+    if (Keyboard::isKeyPressed(Keyboard::Down)) speed = -200;
+    if (Keyboard::isKeyPressed(Keyboard::Tab)) speed *= 3;
+    //if (Keyboard::isKeyPressed(Keyboard::W)) H+=100;
+    //if (Keyboard::isKeyPressed(Keyboard::S)) H-=100;
 
     pos += speed;
     while (pos >= N*segL) pos -= N*segL;
@@ -195,4 +183,3 @@ int main()
 
   return 0;
 }
-
