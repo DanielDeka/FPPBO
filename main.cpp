@@ -14,7 +14,7 @@ void drawQuad(RenderWindow &w, Color c, int x1,int y1,int w1,int x2,int y2,int w
     shape.setPoint(0, Vector2f(x1-w1,y1));
     shape.setPoint(1, Vector2f(x2-w2,y2));
     shape.setPoint(2, Vector2f(x2+w2,y2));
-    shape.setPoint(3, Vector2f(x1+w1,y1));1
+    shape.setPoint(3, Vector2f(x1+w1,y1));
     w.draw(shape);
 }
 
@@ -125,8 +125,8 @@ int main()
   if (Keyboard::isKeyPressed(Keyboard::Up)) speed=200;
   if (Keyboard::isKeyPressed(Keyboard::Down)) speed=-200;
   if (Keyboard::isKeyPressed(Keyboard::Tab)) speed*=3;
-  if (Keyboard::isKeyPressed(Keyboard::W)) H+=100;
-  if (Keyboard::isKeyPressed(Keyboard::S)) H-=100;
+  //if (Keyboard::isKeyPressed(Keyboard::W)) H+=100;
+  //if (Keyboard::isKeyPressed(Keyboard::S)) H-=100;
 
   pos+=speed;
   while (pos >= N*segL) pos-=N*segL;
